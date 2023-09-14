@@ -93,7 +93,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - uses: uraimo/run-on-arch-action@v2
+    - uses: uraimo/run-on-arch-action@v2.5.1
       name: Build
       with:
         arch: aarch64
