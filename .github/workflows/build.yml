@@ -102,8 +102,6 @@ jobs:
           ls -l ${PWD}
         dockerRunArgs: |
           --volume "${PWD}:/workspace"
-        env: |
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         shell: /bin/bash
         install: |
           pacman --noconfirm -Sy go git tar nodejs npm glibc gcc-libs openssl
