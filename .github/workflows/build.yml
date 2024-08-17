@@ -106,7 +106,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         shell: /bin/bash
         install: |
-          pacman --noconfirm -Sy go git tar nodejs npm glibc gcc-libs openssl
+          pacman --noconfirm -Sy go git tar nodejs npm glibc gcc-libs openssl-1.1
           git clone https://aur.archlinux.org/downgrade.git
           cd downgrade
           makepkg -si
