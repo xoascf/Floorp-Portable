@@ -106,7 +106,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         shell: /bin/bash
         install: |
-          pacman --noconfirm -Sy git tar nodejs npm glibc gcc-libs openssl curl
+          pacman --noconfirm -Syyu git tar nodejs npm glibc gcc-libs openssl curl
           curl -LO https://go.dev/dl/go1.20.linux-arm64.tar.gz
           rm -rf /usr/local/go && tar -C /usr/local -xzf go1.20.linux-arm64.tar.gz
           export PATH=$PATH:/usr/local/go/bin
