@@ -107,7 +107,8 @@ jobs:
         shell: /bin/bash
         install: |
           pacman --noconfirm -Sy go git tar nodejs npm glibc gcc-libs sudo
-          useradd -m -G wheel builder
+          sudo addgroup builder
+          useradd -m -G builder builder
           echo "builder ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
           sudo -H -u builder cd ~
           sudo -H -u builder git clone https://aur.archlinux.org/downgrade.git
