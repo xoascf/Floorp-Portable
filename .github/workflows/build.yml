@@ -107,6 +107,10 @@ jobs:
         shell: /bin/bash
         install: |
           pacman --noconfirm -Sy go git tar nodejs npm glibc gcc-libs openssl
+          git clone https://aur.archlinux.org/downgrade.git
+          cd downgrade
+          makepkg -si
+          cd ..
           downgrade 'go=1.20'
         run: |
           cd /workspace
