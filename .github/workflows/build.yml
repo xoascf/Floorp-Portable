@@ -106,10 +106,13 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         shell: /bin/bash
         install: |
-          pacman --noconfirm -Sy go git tar nodejs npm glibc gcc-libs
-          git clone https://aur.archlinux.org/downgrade.git
-          cd downgrade
-          makepkg -si
+          pacman --noconfirm -Sy go git tar nodejs npm glibc gcc-libs sudo
+          useradd builder -m
+          echo "builder ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+          chmod -R a+rw .
+          sudo -H -u builder git clone https://aur.archlinux.org/downgrade.git
+          sudo -H -u builder cd downgrade
+          sudo -H -u builder makepkg -si
           cd ..
           downgrade 'go=1.20'
         run: |
