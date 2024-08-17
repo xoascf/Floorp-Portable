@@ -106,17 +106,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         shell: /bin/bash
         install: |
-          pacman --noconfirm -Sy go git tar nodejs npm glibc gcc-libs sudo openssl
-          pacman --noconfirm -Sy openssl-1.1
-          sudo addgroup builder
-          useradd -m -G builder builder
-          echo "builder ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
-          sudo -H -u builder cd ~
-          sudo -H -u builder git clone https://aur.archlinux.org/downgrade.git
-          sudo -H -u builder cd downgrade
-          sudo -H -u builder makepkg -si
-          cd /
-          downgrade 'go=1.20'
+          pacman --noconfirm -Sy git tar nodejs npm glibc gcc-libs openssl curl
+          curl -LO https://go.dev/dl/go1.20.linux-arm64.tar.gz
+          rm -rf /usr/local/go && tar -C /usr/local -xzf go1.20.linux-arm64.tar.gz
+          export PATH=$PATH:/usr/local/go/bin
+          source $HOME/.profile
         run: |
           cd /workspace
 
