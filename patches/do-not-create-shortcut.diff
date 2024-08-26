@@ -1,12 +1,12 @@
 diff --git a/modules/BrowserGlue.sys.mjs b/modules/BrowserGlue.sys.mjs
-index 56aa2ac146..09fa6dcd47 100644
+index b9a25917dc..4edfb42404 100644
 --- a/modules/BrowserGlue.sys.mjs
-+++ b/modules//BrowserGlue.sys.mjs
-@@ -2788,6 +2788,7 @@ BrowserGlue.prototype = {
- 						false,
- 					),
- 				task: async () => {
-+					return;
- 					const shellService = Cc[
- 						"@mozilla.org/browser/shell-service;1"
- 					].getService(Ci.nsIWindowsShellService);
++++ b/modules/BrowserGlue.sys.mjs
+@@ -2692,6 +2692,7 @@ BrowserGlue.prototype = {
+         name: "pinningStatusTelemetry",
+         condition: AppConstants.platform == "win",
+         task: async () => {
++          return;
+           let shellService = Cc[
+             "@mozilla.org/browser/shell-service;1"
+           ].getService(Ci.nsIWindowsShellService);
