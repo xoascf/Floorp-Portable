@@ -87,7 +87,7 @@ body:
 
   - type: input
     attributes:
-      label: Operating System (for example: Windows 10 Home, Debian 12, Fedora 40)
+      label: "Operating System (for example: Windows 10 Home, Debian 12, Fedora 40)"
     validations:
       required: true
 
