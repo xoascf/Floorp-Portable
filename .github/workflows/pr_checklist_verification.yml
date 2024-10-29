@@ -32,7 +32,7 @@ jobs:
               repo: context.repo.repo,
             });
 
-            const existingComment = comments.find(comment => comment.body.includes(marker));
+            const existingComment = comments.find(comment => comment.user.id == 41898282 && comment.body.includes(marker));
 
             if (allChecked) {
               if (existingComment) {
