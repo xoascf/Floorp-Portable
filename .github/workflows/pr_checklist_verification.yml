@@ -2,7 +2,7 @@ name: PR Checklist Verification
 
 on:
   pull_request:
-    types: [opened, edited, synchronize]
+    types: [opened, reopened, edited, synchronize]
 
 jobs:
   check-pr-checklist:
