@@ -1,0 +1,97 @@
+name: "\U0001F41B Bug report"
+description: Create a report to help us improve the browser experience.
+title: "[Bug]: "
+labels: [bug]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Reminder
+        To help resolve your issue quickly, please describe your problem as accurately and concisely as possible.
+
+        For Japanese: 日本語で書いても構いません。
+
+        ## Disclaimer
+        > [!NOTE]
+        > Windows 7, 8, 8.1, and earlier versions are not supported due to maintenance costs.
+        > DRM is not supported, esp. on Netflix.
+        > **We do not answer any questions about builds. If you make such an Issue, it may be closed without reason.**
+
+  - type: checkboxes
+    attributes:
+      label: Pre-Submission Checklist
+      description: Please go through the checklist below before submitting your issue.
+      options:
+        - label: I have checked the existing/closed issues to ensure this issue has not already been reported.
+          required: true
+        - label: I am using the latest version of Floorp Portable.
+          required: true
+        - label: I have tried disabling all browser extensions/add-ons to rule out interference from these.
+          required: true
+        - label: I have tried clearing the browser cache and cookies.
+          required: true
+        - label: I have checked with a new profile and the issue still occurs.
+          required: true
+        - label: I have checked that this problem is not occurring in the latest version of non-portable Floorp.
+          required: true
+        - label: I have checked that this problem is not occurring in the latest version of Firefox ESR.
+          required: true
+        - label: I have provided detailed step-by-step instructions on how to reproduce the issue.
+          required: true
+        - label: I have included relevant screenshots or console outputs.
+
+  - type: textarea
+    attributes:
+      label: Bug Summary
+      description: Provide a clear, concise description of the bug.
+      placeholder: Brief bug description...
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Reproduction Steps
+      description: List the steps to reproduce the behavior.
+      placeholder: "1.\n2.\n3.\n4."
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Expected Behavior
+      description: A clear and concise description of what you expected to happen.
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Actual Behavior
+      description: A clear and concise description of what actually happened. Include screenshots if applicable.
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshots-or-console-outputs
+    attributes:
+      label: Screenshots or Console outputs (recommended)
+      description: Add screenshots or console outputs to help explain your problem.
+      placeholder: Drag or paste images or videos to upload (video is recommended).
+
+  - type: input
+    attributes:
+      label: Browser Version
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: Operating System (for example: Windows 10 Home, Debian 12, Fedora 40)
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Additional Context
+      description: Add any other context about the problem here, such as specific web pages affected, frequency of the issue, etc.
