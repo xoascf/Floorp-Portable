@@ -17,12 +17,12 @@ body:
         > [!NOTE]
         > Windows 7, 8, 8.1, and earlier versions are not supported due to maintenance costs.
         > DRM is not supported, esp. on Netflix.
-        > **We do not answer any questions about builds. If you make such an Issue, it may be closed without reason.**
+        > **We do not answer any questions about the build process. If you make such an Issue, it may be closed without reason.**
 
   - type: checkboxes
     attributes:
       label: Pre-Submission Checklist
-      description: Please go through the checklist below before submitting your issue.
+      description: Please go through the checklist below before submitting your feature request.
       options:
         - label: I have checked the existing/closed issues to ensure this issue has not already been reported.
           required: true
@@ -32,7 +32,7 @@ body:
     attributes:
       label: Feature Request Summary
       description: Provide a clear, concise description of the feature request.
-      placeholder: Brief description of feature request...
+      placeholder: A brief description of the feature request...
     validations:
       required: true
 

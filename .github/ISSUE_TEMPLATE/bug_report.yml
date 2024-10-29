@@ -17,7 +17,7 @@ body:
         > [!NOTE]
         > Windows 7, 8, 8.1, and earlier versions are not supported due to maintenance costs.
         > DRM is not supported, esp. on Netflix.
-        > **We do not answer any questions about builds. If you make such an Issue, it may be closed without reason.**
+        > **We do not answer any questions about the build process. If you make such an Issue, it may be closed without reason.**
 
   - type: checkboxes
     attributes:
@@ -47,7 +47,7 @@ body:
     attributes:
       label: Bug Summary
       description: Provide a clear, concise description of the bug.
-      placeholder: Brief bug description...
+      placeholder: A brief description of the bug...
     validations:
       required: true
 
