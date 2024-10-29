@@ -5,7 +5,7 @@
 **Warning: This is currently a beta version. Unexpected problems may occur.**
 
 
-## Requirements
+## Requirements ([Pre-build binaries](https://github.com/Floorp-Projects/Floorp-Portable/releases))
 * Windows
   * OS: 10, 11 (x86_64)
   * Memory: 8GB+
@@ -14,7 +14,7 @@
   * CPU Architecture: x86_64, aarch64
   * Memory: 8GB+
   * Disk Space: At least 2GB of free disk space.
-  * Packages: bubblewrap, glibc, gtk+, libstdc++, xorg, curl
+  * Packages: bubblewrap, glibc, gtk+, libstdc++, xorg
 
 
 ## How to build
