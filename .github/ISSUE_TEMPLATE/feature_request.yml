@@ -1,0 +1,42 @@
+name: "\U0001F41B Feature Request"
+description: Create a report to help us improve the browser experience.
+title: "[Feature Request]: "
+labels: [enhancement]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Reminder
+        To help resolve your feature request quickly, please describe your problem as accurately and concisely as possible.
+
+        For Japanese: 日本語で書いても構いません。
+
+        ## Disclaimer
+        > [!NOTE]
+        > Windows 7, 8, 8.1, and earlier versions are not supported due to maintenance costs.
+        > DRM is not supported, esp. on Netflix.
+        > **We do not answer any questions about builds. If you make such an Issue, it may be closed without reason.**
+
+  - type: checkboxes
+    attributes:
+      label: Pre-Submission Checklist
+      description: Please go through the checklist below before submitting your issue.
+      options:
+        - label: I have checked the existing/closed issues to ensure this issue has not already been reported.
+          required: true
+        - label: I will implement this by myself and send a pull request.
+
+  - type: textarea
+    attributes:
+      label: Feature Request Summary
+      description: Provide a clear, concise description of the feature request.
+      placeholder: Brief description of feature request...
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Additional Context
+      description: Add any other context about the feature request here, such as related issues, etc.
