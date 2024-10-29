@@ -13,7 +13,7 @@ jobs:
         with:
           script: |
             const prNumber = context.payload.pull_request.number;
-            const { data: pr } = await github.pulls.get({
+            const { data: pr } = await github.rest.pulls.get({
               owner: context.repo.owner,
               repo: context.repo.repo,
               pull_number: prNumber,
@@ -42,7 +42,7 @@ jobs:
               }
             } else {
               if (!exitingComment) {
-                await github.issues.createComment({
+                await github.rest.issues.createComment({
                   owner: context.repo.owner,
                   repo: context.repo.repo,
                   issue_number: prNumber,
