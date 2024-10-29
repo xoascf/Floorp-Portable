@@ -5,7 +5,7 @@
 **Warning: This is currently a beta version. Unexpected problems may occur.**
 
 
-## Requirements ([Pre-build binaries](https://github.com/Floorp-Projects/Floorp-Portable/releases))
+## Requirements ([Pre-built binaries](https://github.com/Floorp-Projects/Floorp-Portable/releases))
 * Windows
   * OS: 10, 11 (x86_64)
   * Memory: 8GB+
