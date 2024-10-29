@@ -1,0 +1,52 @@
+name: PR Checklist Verification
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize]
+
+jobs:
+  check-pr-checklist:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check if all checklist items are completed
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const prNumber = context.payload.pull_request.number;
+            const { data: pr } = await github.pulls.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: prNumber,
+            });
+
+            const checklistRegex = /- \[([ xX])\] .*/g;
+            const checklistItems = pr.body.match(checklistRegex) || [];
+            const allChecked = checklistItems.every(item => item.toLowerCase().includes("[x]"));
+
+            const commentBody = "⚠️ Please complete all checklist items before merging. ⚠️";
+            const marker = "<!-- checklist-warning -->";
+
+            const { data: comments } = await github.rest.issues.listComments({
+              ...context.issue,
+            });
+
+            const existingComment = comments.find(comment => comment.body.includes(marker));
+
+            if (allChecked) {
+              if (existingComment) {
+                await github.rest.issues.deleteComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  comment_id: existingComment.id,
+                });
+              }
+            } else {
+              if (!exitingComment) {
+                await github.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: prNumber,
+                  body: `${marker}\n${commentBody}`,
+                });
+              }
+            }
