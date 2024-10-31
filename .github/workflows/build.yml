@@ -33,8 +33,11 @@ jobs:
 
         cd .github/autopatcher
         go build
+        dir
         copy autopatcher.exe ../..
+        dir
         cd ../..
+        dir
         ./autopatcher.exe
 
         dir
